@@ -5,23 +5,7 @@ interface CardProps {
 }
 
 function Card({ card }: CardProps) {
-  const getRatingWidth = () => {
-    switch (card.rating) {
-      case 1:
-        return '20%';
-      case 2:
-        return '40%';
-      case 3:
-        return '60%';
-      case 4:
-        return '80%';
-      case 5:
-        return '100%';
-      default:
-        return '0%';
-    }
-  };
-
+  const getRatingWidth = () => card.rating * 2 * 10;
   return (
     <article className="cities__card place-card">
       {card.isPremium && (
@@ -33,7 +17,7 @@ function Card({ card }: CardProps) {
         <a href="#">
           <img
             className="place-card__image"
-            src={card.img}
+            src={card.previewImage}
             width="260"
             height="200"
             alt="Place image"
@@ -65,7 +49,7 @@ function Card({ card }: CardProps) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{card.text}</a>
+          <a href="#">{card.title}</a>
         </h2>
         <p className="place-card__type">{card.type}</p>
       </div>

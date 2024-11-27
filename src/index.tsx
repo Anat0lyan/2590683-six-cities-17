@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app';
-import { offers } from './Mock';
+import fetchData, { CardType } from './Mock';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
+);
+
+const offers: CardType[] = await fetchData(
+  'https://16.design.htmlacademy.pro/six-cities/offers'
 );
 
 root.render(

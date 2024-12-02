@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './app';
+import fetchData, { CardType } from './Mock';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+const offers: CardType[] = await fetchData(
+  'https://16.design.htmlacademy.pro/six-cities/offers'
+);
+
 root.render(
   <React.StrictMode>
-    <h1>Hello, World!</h1>
+    <App offers={offers} />
   </React.StrictMode>
 );

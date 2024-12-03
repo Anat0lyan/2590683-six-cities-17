@@ -1,10 +1,10 @@
-import Card from '../Components/Card/Card';
-import Header from '../Components/header/header';
-import LocationItem from '../Components/location-item/locationItem';
-import SortBy from '../Components/sort/sortBy';
-import { CardType } from '../Components/Card/cardType';
-import { Cities } from '../Mock/index';
-import { isAuth } from '../Mock/index';
+import Card from '../components/card/card';
+import Header from '../components/header/header';
+import LocationItem from '../components/location-item/locationItem';
+import SortBy from '../components/sort/sortBy';
+import { CardType } from '../components/card/cardType';
+import { Cities } from '../const';
+import { isAuth } from '../mock/index';
 
 interface MainProps {
   offers: CardType[];

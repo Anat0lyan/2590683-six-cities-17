@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { sortTitels } from '../../Mock';
+import { sortTitels } from '../../const';
 import SortByItem from './sortByItem';
 
 export default function SortBy() {

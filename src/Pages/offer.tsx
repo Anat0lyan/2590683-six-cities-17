@@ -1,9 +1,9 @@
-import Header from "../Components/Header/header";
+import Header from '../components/header/header';
 
 function Offer() {
   return (
     <div className="page">
-      <Header/>
+      <Header />
 
       <main className="page__main page__main--offer">
         <section className="offer">

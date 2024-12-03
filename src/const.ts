@@ -9,5 +9,21 @@ export const Cities = [
   'Dusseldorf',
 ] as const;
 
-export const isAuth = true;
-export const email = 'Oliver.conner@gmail.com' as const;
+export enum RoutesTo {
+  LOGIN = 'login',
+  FAVORITES = 'favorites',
+  OFFER = 'offer',
+}
+
+export const sortTitels = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first',
+];
+
+// type Location = {
+//   latitude: number;
+//   longitude: number;
+//   zoom: number;
+// };

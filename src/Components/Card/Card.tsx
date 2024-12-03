@@ -1,5 +1,5 @@
-import PremiumItem from '../Premium/premiumItem';
-import RatingItem from '../Rating/ratingItem';
+import PremiumItem from '../premium/premiumItem';
+import RatingItem from '../rating/ratingItem';
 import CardImg from './cardImg';
 import { CardType } from './cardType';
 

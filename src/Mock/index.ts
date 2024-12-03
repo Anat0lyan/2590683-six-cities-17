@@ -1,4 +1,9 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
+
+export const isAuth = true;
+export const email = 'Oliver.conner@gmail.com' as const;
+
+export const API = 'https://16.design.htmlacademy.pro';
 
 export default async function fetchData(
   url: string,
@@ -6,40 +11,16 @@ export default async function fetchData(
   headers = {}
 ) {
   try {
-    const response = await axios.get(url, {
+    const response: AxiosResponse<[]> = await axios.get(url, {
       params: params,
       headers: headers,
     });
+    console.log('запрос ушел');
+    console.log(response.data);
+
     return response.data;
   } catch (error) {
     console.error('Ошибка при выполнении запроса:', error.message);
     throw error;
   }
 }
-
-type Location = {
-  latitude: number;
-  longitude: number;
-  zoom: number;
-};
-
-export const sortTitels = [
-  'Popular',
-  'Price: low to high',
-  'Price: high to low',
-  'Top rated first',
-];
-
-export enum Routes {}
-
-export const Cities = [
-  'Paris',
-  'Cologne',
-  'Brussels',
-  'Amsterdam',
-  'Hamburg',
-  'Dusseldorf',
-] as const;
-
-export const isAuth = true;
-export const email = 'Oliver.conner@gmail.com' as const;

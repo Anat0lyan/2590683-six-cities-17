@@ -1,4 +1,4 @@
-import { Cities } from '../../Mock';
+import { Cities } from '../../mock';
 
 export interface CardType {
   id: string;

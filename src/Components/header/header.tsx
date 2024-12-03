@@ -1,5 +1,4 @@
-import { useLocation } from 'react-router-dom';
-import { email, isAuth } from '../../Mock';
+import { email, isAuth } from '../../mock';
 
 export default function Header() {
   // const location = useLocation();
@@ -29,16 +28,16 @@ export default function Header() {
                   href="#"
                 >
                   <div className="header__avatar-wrapper user__avatar-wrapper"></div>
-                  {isAuth? 
-                  <>
-                  <span className="header__user-name user__name">{email}</span>
-                        <span className="header__favorite-count">3</span> 
-                  
-                  </>
-                  : 
-                  <span className="header__login">Sign in</span>
-                  }
-                  
+                  {isAuth ? (
+                    <>
+                      <span className="header__user-name user__name">
+                        {email}
+                      </span>
+                      <span className="header__favorite-count">3</span>
+                    </>
+                  ) : (
+                    <span className="header__login">Sign in</span>
+                  )}
                 </a>
               </li>
               <li className="header__nav-item">
@@ -48,7 +47,6 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-
         </div>
       </div>
     </header>

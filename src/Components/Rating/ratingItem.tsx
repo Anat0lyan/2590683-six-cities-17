@@ -1,4 +1,4 @@
-import { CardType } from '../Card/cardType';
+import { CardType } from '../card/cardType';
 
 type RatingItemPropsType = {
   rating: CardType['rating'];

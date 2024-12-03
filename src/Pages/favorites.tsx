@@ -1,7 +1,7 @@
-import Card from '../Components/Card/Card';
-import Footer from '../Components/Footer/footerFavorites';
-import Header from '../Components/Header/header';
-import PremiumItem from '../Components/Premium/premiumItem';
+import Footer from '../components/footer/footerFavorites';
+import Header from '../components/header/header';
+// import Card from '../Components/Card/Card';
+// import PremiumItem from '../Components/Premium/premiumItem';
 
 type FavorytesProps = {
   isEmpty: boolean;

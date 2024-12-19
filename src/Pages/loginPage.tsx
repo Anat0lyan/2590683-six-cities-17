@@ -1,15 +1,20 @@
 import { useState } from 'react';
-import fetchData, { API } from '../mock';
+import { API, fetchPostData } from '../mock';
+import { AuthDataResponseType } from '../app';
+import { Link, NavLink } from 'react-router-dom';
 
 type AuthDataType = {
   email: string;
   password: string;
 };
+type LoginPagePropsType = {
+  setReponseAuth: (data: AuthDataResponseType) => void;
+};
 
-function LoginPage() {
+function LoginPage({ setReponseAuth }: LoginPagePropsType) {
   const [dataForm, setDataForm] = useState<AuthDataType>({
-    email: 'Oliver@gmail.com',
-    password: 'pass',
+    email: 'Oliver.conner@gmail.com',
+    password: 'password1',
   });
 
   const handleChangeAuthData = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +25,7 @@ function LoginPage() {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const response = await fetchData(
+    const response: AuthDataResponseType = await fetchPostData(
       `${API}/six-cities/login`,
       { ...dataForm },
       {
@@ -28,7 +33,8 @@ function LoginPage() {
         // 'X-Token': 'T2xpdmVyLmNvbm5lckBnbWFpbC5jb20=',
       }
     );
-    // console.log(response);
+    setReponseAuth(response);
+    <NavLink to="/"></NavLink>;
   };
 
   return (
@@ -37,7 +43,7 @@ function LoginPage() {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <a className="header__logo-link" href="main.html">
+              <Link className="header__logo-link" to="/">
                 <img
                   className="header__logo"
                   src="img/logo.svg"
@@ -45,7 +51,7 @@ function LoginPage() {
                   width="81"
                   height="41"
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

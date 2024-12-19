@@ -5,15 +5,17 @@ import SortBy from '../components/sort/sortBy';
 import { CardType } from '../components/card/cardType';
 import { Cities } from '../const';
 import { isAuth } from '../mock/index';
+import { AuthDataResponseType } from '../app';
 
 interface MainProps {
   offers: CardType[];
+  reponseAuth?: AuthDataResponseType;
 }
 
-function Main({ offers }: MainProps) {
+function Main({ offers, reponseAuth }: MainProps) {
   return (
     <div className="page page--gray page--main">
-      <Header />
+      <Header reponseAuth={reponseAuth} />
       <main
         className={`page__main page__main--index
         ${!isAuth ? 'page__main--index-empty' : ''}`}

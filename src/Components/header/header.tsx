@@ -1,6 +1,12 @@
-import { email, isAuth } from '../../mock';
+import { Link } from 'react-router-dom';
+import { AuthDataResponseType } from '../../app';
+import { isAuth } from '../../mock';
 
-export default function Header() {
+type HeaderType = {
+  reponseAuth: AuthDataResponseType;
+};
+
+export default function Header({ reponseAuth }: HeaderType) {
   // const location = useLocation();
   // console.log(location.pathname);
 
@@ -12,7 +18,7 @@ export default function Header() {
             <a className="header__logo-link header__logo-link--active">
               <img
                 className="header__logo"
-                src="img/logo.svg"
+                src="'img/logo.svg'"
                 alt="6 cities logo"
                 width="81"
                 height="41"
@@ -23,22 +29,22 @@ export default function Header() {
           <nav className="header__nav">
             <ul className="header__nav-list">
               <li className="header__nav-item user">
-                <a
+                <Link
                   className="header__nav-link header__nav-link--profile"
-                  href="#"
+                  to="#"
                 >
                   <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                   {isAuth ? (
                     <>
                       <span className="header__user-name user__name">
-                        {email}
+                        {reponseAuth.name}
                       </span>
                       <span className="header__favorite-count">3</span>
                     </>
                   ) : (
                     <span className="header__login">Sign in</span>
                   )}
-                </a>
+                </Link>
               </li>
               <li className="header__nav-item">
                 <a className="header__nav-link" href="#">
